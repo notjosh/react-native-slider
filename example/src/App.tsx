@@ -1,8 +1,12 @@
 import React from 'react';
 import {Platform, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {examples} from './Examples';
+import {useSharedValue} from 'react-native-reanimated';
 
 const App = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const someValue = useSharedValue(0);
+
   return (
     <ScrollView
       style={styles.scrollView}
