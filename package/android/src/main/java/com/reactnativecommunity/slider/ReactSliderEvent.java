@@ -47,9 +47,10 @@ public class ReactSliderEvent extends Event<ReactSliderEvent> {
     return 0;
   }
 
+  @Nullable
   @Override
-  public void dispatchModern(RCTModernEventEmitter rctEventEmitter) {
-    rctEventEmitter.receiveEvent(getViewTag(), getEventName(), serializeEventData());
+  protected WritableMap getEventData() {
+    return serializeEventData();
   }
 
   private WritableMap serializeEventData() {

@@ -45,9 +45,10 @@ public class ReactSlidingCompleteEvent extends Event<ReactSlidingCompleteEvent> 
         return false;
     }
 
+    @Nullable
     @Override
-    public void dispatchModern(RCTModernEventEmitter rctEventEmitter) {
-        rctEventEmitter.receiveEvent(getViewTag(), getEventName(), serializeEventData());
+    protected WritableMap getEventData() {
+        return serializeEventData();
     }
 
     private WritableMap serializeEventData() {
